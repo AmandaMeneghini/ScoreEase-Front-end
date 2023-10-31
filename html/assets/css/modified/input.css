@@ -1,0 +1,51 @@
+.content-enriquecer{
+    color: black;
+}
+.mb-4{
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.label-enriquecer{
+    margin-left: 50px;
+}
+
+.file-size{
+    margin-left: 55px;
+    position: relative;
+    top: -13px;
+}
+
+.fieldset-enriquecer{
+    padding-right: 50px;
+}
+
+.txt-file{
+    margin-left: 50px;
+}
+
+.label-conteudo{
+    background-color: #f1f2f7;
+    border-radius: 10px;
+    height: 70px;
+    
+}
+
+.browse-files{
+    margin-left: 500px;
+    position: relative;
+    top: -80px;
+}
+
+.button-tittle{
+    color: black;
+    margin-left: 50px;
+    padding-top: 30px;
+}
+
+.button-enriquecer{
+    margin-left: 50px;
+    border-radius: 10px;
+    background-color: white;
+}
+
