@@ -179,7 +179,7 @@ Index Of Script
 
     updateMode()
 
-    //dark-mode & light-mode
+    // dark-mode & light-mode
     // const colorMode = document.querySelectorAll('[data-setting="color-mode"][data-name="color"]')
     // Array.from(colorMode, (mode) => {
     //     mode.addEventListener('click', (e) => {
@@ -187,18 +187,42 @@ Index Of Script
     //             el.classList.remove('active')
     //             document.querySelector('body').classList.remove(el.getAttribute('data-value'))
     //         })
-    //         sessionStorage.setItem('color-mode', mode.getAttribute('data-value'))
+    //          .setItem('color-mode', mode.getAttribute('data-value'))
     //         mode.classList.add('active')
     //         document.querySelector('body').classList.add(mode.getAttribute('data-value'))
     //         changeMode('color-mode', mode.getAttribute('data-value'))
     //     })
     // })
 
-    const colorMode = document.getElementById('flexSwitchCheckChecked')
+    //new code dark mode
+    const colorMode = document.getElementById('flexSwitchCheckChecked');
 
-    flexSwitchCheckChecked.addEventListener('change', () => {
-        document.body.classList.toggle('dark')
-    })
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+       //teste
+      }
+      
+      // Load light or dark mode
+      function loadTheme() {
+        const darkMode = localStorage.getItem("dark");
+      
+        if (darkMode) {
+          toggleDarkMode();
+        }
+      }
+      
+      loadTheme();
+      
+      colorMode.addEventListener("change", function () {
+        toggleDarkMode();
+      
+        // Save or remove dark mode from localStorage
+        localStorage.removeItem("dark");
+      
+        if (document.body.classList.contains("dark")) {
+          localStorage.setItem("dark", 1);
+        }
+      });
 
     //rtl & ltr
     const dirMode = document.querySelectorAll('[data-setting="dir-mode"][data-name="dir"]')

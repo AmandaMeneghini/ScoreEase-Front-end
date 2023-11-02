@@ -190,6 +190,7 @@ hr {
 .dark button.close-btn-res {
   color: #dee2e6;
 }
+
 .dark hr.hr-horizontal {
   background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(rgba(255, 255, 255, 0.4)), to(transparent));
   background-image: -webkit-linear-gradient(left, transparent, rgba(255, 255, 255, 0.4), transparent);
