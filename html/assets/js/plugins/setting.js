@@ -180,18 +180,24 @@ Index Of Script
     updateMode()
 
     //dark-mode & light-mode
-    const colorMode = document.querySelectorAll('[data-setting="color-mode"][data-name="color"]')
-    Array.from(colorMode, (mode) => {
-        mode.addEventListener('click', (e) => {
-            Array.from(colorMode, (el) => {
-                el.classList.remove('active')
-                document.querySelector('body').classList.remove(el.getAttribute('data-value'))
-            })
-            sessionStorage.setItem('color-mode', mode.getAttribute('data-value'))
-            mode.classList.add('active')
-            document.querySelector('body').classList.add(mode.getAttribute('data-value'))
-            changeMode('color-mode', mode.getAttribute('data-value'))
-        })
+    // const colorMode = document.querySelectorAll('[data-setting="color-mode"][data-name="color"]')
+    // Array.from(colorMode, (mode) => {
+    //     mode.addEventListener('click', (e) => {
+    //         Array.from(colorMode, (el) => {
+    //             el.classList.remove('active')
+    //             document.querySelector('body').classList.remove(el.getAttribute('data-value'))
+    //         })
+    //         sessionStorage.setItem('color-mode', mode.getAttribute('data-value'))
+    //         mode.classList.add('active')
+    //         document.querySelector('body').classList.add(mode.getAttribute('data-value'))
+    //         changeMode('color-mode', mode.getAttribute('data-value'))
+    //     })
+    // })
+
+    const colorMode = document.getElementById('flexSwitchCheckChecked')
+
+    flexSwitchCheckChecked.addEventListener('change', () => {
+        document.body.classList.toggle('dark')
     })
 
     //rtl & ltr
