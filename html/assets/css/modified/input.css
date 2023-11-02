@@ -1,41 +1,45 @@
-.content-enriquecer{
+
+.files-area{
     color: black;
 }
-.mb-4{
-    font-size: 20px;
-    margin-left: 50px;
+
+
+
+input[type="file"] {
+    display: none;
 }
 
-.label-enriquecer{
-    margin-left: 50px;
-}
-
-.file-size{
-    margin-left: 55px;
-    position: relative;
-    top: -13px;
-}
-
-.fieldset-enriquecer{
-    padding-right: 50px;
-}
-
-.txt-file{
-    margin-left: 50px;
-}
-
-.label-conteudo{
+.label-file{
+    width: 100%;
+    display: flex;
     background-color: #f1f2f7;
+    padding: 10px 10px 10px 10px;
     border-radius: 10px;
-    height: 70px;
+}
+
+.label-file .text-first{
+    margin-left: 15px;
+}
+.label-file .text-filelimit {
+ display: block;
+ color: #afb2c5;
+}
+.label-file .browse-file{
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-left: 500px;
     
 }
 
-.browse-files{
-    margin-left: 500px;
-    position: relative;
-    top: -80px;
+.label-file .cloud-img{
+  opacity: 0.4;
+  margin-top: 10px;
+  margin-left: 3px;
+  
 }
+
 
 .button-tittle{
     color: black;
@@ -48,4 +52,3 @@
     border-radius: 10px;
     background-color: white;
 }
-
