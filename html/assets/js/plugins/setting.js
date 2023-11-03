@@ -75,109 +75,109 @@ Index Of Script
     }
 
     // Dark mode enable & disabled function
-    const darkMode = () => {
-        if (document.querySelector('body').classList.contains('auto')) {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.querySelector('body').classList.add('dark')
-            } else {
-                document.querySelector('body').classList.remove('dark')
-            }
-        }
-    }
+    // const darkMode = () => {
+    //     if (document.querySelector('body').classList.contains('auto')) {
+    //         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    //             document.querySelector('body').classList.add('dark')
+    //         } else {
+    //             document.querySelector('body').classList.remove('dark')
+    //         }
+    //     }
+    // }
 
     // For Dark, RTL & Sidebar Class Update
-    const changeMode = (type, value, target) => {
-        let detailObj = {}
-        if (type == 'color-mode') {
-            detailObj = {dark: value}
-            document.querySelector('body').classList.add(value)
-        }
-        if (type == 'dir-mode') {
-            detailObj = {dir: value}
-            document.querySelector('html').setAttribute('dir',value)
-        }
-        if (type == 'sidebar') {
-            detailObj = {'sidebar-color': value}            
-           const sidebarclass= document.querySelector('.sidebar-default')
-           if(sidebarclass !== null && sidebarclass !== undefined){
-                sidebarclass.classList.add(value)
-           }
-        }
-        const event = new CustomEvent("ChangeMode", {detail: detailObj });
-        document.dispatchEvent(event);
-    }
+    // const changeMode = (type, value, target) => {
+    //     let detailObj = {}
+    //     if (type == 'color-mode') {
+    //         detailObj = {dark: value}
+    //         document.querySelector('body').classList.add(value)
+    //     }
+    //     if (type == 'dir-mode') {
+    //         detailObj = {dir: value}
+    //         document.querySelector('html').setAttribute('dir',value)
+    //     }
+    //     if (type == 'sidebar') {
+    //         detailObj = {'sidebar-color': value}            
+    //        const sidebarclass= document.querySelector('.sidebar-default')
+    //        if(sidebarclass !== null && sidebarclass !== undefined){
+    //             sidebarclass.classList.add(value)
+    //        }
+    //     }
+    //     const event = new CustomEvent("ChangeMode", {detail: detailObj });
+    //     document.dispatchEvent(event);
+    // }
 
     // Page on load function
-    const updateMode = () => {
+    // const updateMode = () => {
         // Change Mode Custom Event Listners
-        document.addEventListener('ChangeMode',(e) => {
-            if (e.detail.dir === 'rtl' || e.detail.dir === 'ltr') {
-                rtlModeDefault(true)
-            }
-            if (e.detail.dark !== null || e.detail.dark !== undefined) {
-                darkMode()
-            }
-        })
+        // document.addEventListener('ChangeMode',(e) => {
+        //     if (e.detail.dir === 'rtl' || e.detail.dir === 'ltr') {
+        //         rtlModeDefault(true)
+        //     }
+        //     if (e.detail.dark !== null || e.detail.dark !== undefined) {
+        //         darkMode()
+        //     }
+        // })
 
         // For Dark Mode
-        const colorMode =  sessionStorage.getItem('color-mode')
-        if(colorMode !== null && colorMode !== undefined) {
-            document.body.classList.remove('dark')
-            document.body.classList.add(colorMode)
-            darkMode()
-            checkSettingMenu('color-mode', 'color', colorMode, 'addedClass')
-        }
+        // const colorMode =  sessionStorage.getItem('color-mode')
+        // if(colorMode !== null && colorMode !== undefined) {
+        //     document.body.classList.remove('dark')
+        //     document.body.classList.add(colorMode)
+        //     darkMode()
+        //     checkSettingMenu('color-mode', 'color', colorMode, 'addedClass')
+        // }
 
-        // For RTL Mode
-        const dirMode =  sessionStorage.getItem('dir-mode')
-        if(dirMode !== null && dirMode !== undefined && dirMode !== 'ltr') {
-            checkSettingMenu('dir-mode', 'dir', dirMode, 'addedClass')
-            changeMode('dir-mode', dirMode)
-        }
+        // // For RTL Mode
+        // const dirMode =  sessionStorage.getItem('dir-mode')
+        // if(dirMode !== null && dirMode !== undefined && dirMode !== 'ltr') {
+        //     checkSettingMenu('dir-mode', 'dir', dirMode, 'addedClass')
+        //     changeMode('dir-mode', dirMode)
+        // }
 
-        // For Sidebar Color
-        const sidebarColors =  sessionStorage.getItem('sidebar')
-        if(sidebarColors !== null && sidebarColors !== undefined) {
-            checkSettingMenu('sidebar', 'sidebar-color', sidebarColors, 'addedClass')
-            changeMode('sidebar', sidebarColors)
-        }
+        // // For Sidebar Color
+        // const sidebarColors =  sessionStorage.getItem('sidebar')
+        // if(sidebarColors !== null && sidebarColors !== undefined) {
+        //     checkSettingMenu('sidebar', 'sidebar-color', sidebarColors, 'addedClass')
+        //     changeMode('sidebar', sidebarColors)
+        // }
 
-        // For Sidebar Types
-        const sidebarTypeSession = sessionStorage.getItem('sidebarType')
-        if(sidebarTypeSession !== null && sidebarTypeSession !== undefined) {
-            sidebarTypeSetting = JSON.parse(sidebarTypeSession)
-            Array.from(sidebarTypeSetting,(type) => {
-                document.querySelectorAll(`[data-setting="sidebar"][data-name="sidebar-type"][data-value="${type}"]`).forEach((el) => {
-                    el.classList.add('active')
-                });
-                changeMode('sidebar', type)
-            })
-        }
+        // // For Sidebar Types
+        // const sidebarTypeSession = sessionStorage.getItem('sidebarType')
+        // if(sidebarTypeSession !== null && sidebarTypeSession !== undefined) {
+        //     sidebarTypeSetting = JSON.parse(sidebarTypeSession)
+        //     Array.from(sidebarTypeSetting,(type) => {
+        //         document.querySelectorAll(`[data-setting="sidebar"][data-name="sidebar-type"][data-value="${type}"]`).forEach((el) => {
+        //             el.classList.add('active')
+        //         });
+        //         changeMode('sidebar', type)
+        //     })
+        // }
 
-        // For Sidebar Active Style
-        const allActiveType =  sessionStorage.getItem('sidebar-style')
-        if(allActiveType !== null && allActiveType !== undefined) {
-            document.querySelector('.sidebar').classList.remove('navs-rounded-all')
-            document.querySelector('.sidebar').classList.add(`${allActiveType}`)
-            checkSettingMenu('sidebar', 'sidebar-item', allActiveType, 'addedClass')
-            changeMode('sidebar-style', allActiveType)
-        }
+        // // For Sidebar Active Style
+        // const allActiveType =  sessionStorage.getItem('sidebar-style')
+        // if(allActiveType !== null && allActiveType !== undefined) {
+        //     document.querySelector('.sidebar').classList.remove('navs-rounded-all')
+        //     document.querySelector('.sidebar').classList.add(`${allActiveType}`)
+        //     checkSettingMenu('sidebar', 'sidebar-item', allActiveType, 'addedClass')
+        //     changeMode('sidebar-style', allActiveType)
+        // }
 
-        // For Navbar & Header Style
-        const allNavbarType = sessionStorage.getItem('navbarTypes')
-        if(allNavbarType !== null && allNavbarType !== undefined){
-            if(allNavbarType == 'nav-glass' || allNavbarType == 'navs-sticky' || allNavbarType == 'navs-transparent'){
-                document.querySelector('.iq-navbar').classList.add(`${allNavbarType}`)
-            }
-            if(allNavbarType == 'navs-bg-color'){
-                document.querySelector('.iq-navbar').classList.remove('nav-glass','navs-sticky','navs-transparent')
-                document.querySelector('.iq-navbar-header').classList.add(`${allNavbarType}`)
-            }
-            checkSettingMenu('navbar', 'navbar-type', allNavbarType, 'noClass')
-        }
-    }
+        // // For Navbar & Header Style
+        // const allNavbarType = sessionStorage.getItem('navbarTypes')
+        // if(allNavbarType !== null && allNavbarType !== undefined){
+        //     if(allNavbarType == 'nav-glass' || allNavbarType == 'navs-sticky' || allNavbarType == 'navs-transparent'){
+        //         document.querySelector('.iq-navbar').classList.add(`${allNavbarType}`)
+        //     }
+        //     if(allNavbarType == 'navs-bg-color'){
+        //         document.querySelector('.iq-navbar').classList.remove('nav-glass','navs-sticky','navs-transparent')
+        //         document.querySelector('.iq-navbar-header').classList.add(`${allNavbarType}`)
+        //     }
+        //     checkSettingMenu('navbar', 'navbar-type', allNavbarType, 'noClass')
+        // }
+    // }
 
-    updateMode()
+    // updateMode()
 
     // dark-mode & light-mode
     // const colorMode = document.querySelectorAll('[data-setting="color-mode"][data-name="color"]')
@@ -194,36 +194,14 @@ Index Of Script
     //     })
     // })
 
-    //new code dark mode
-    const colorMode = document.getElementById('flexSwitchCheckChecked');
+    //function dark mode here
+    // const colorMode = document.getElementById('flexSwitchCheckChecked-changeMode');
 
-    function toggleDarkMode() {
-        document.body.classList.toggle("dark");
-       //teste
-      }
+    // function toggleDarkMode() {
+    //     document.body.classList.toggle("dark");
+    //   }
       
-      // Load light or dark mode
-      function loadTheme() {
-        const darkMode = localStorage.getItem("dark");
-      
-        if (darkMode) {
-          toggleDarkMode();
-        }
-      }
-      
-      loadTheme();
-      
-      colorMode.addEventListener("change", function () {
-        toggleDarkMode();
-      
-        // Save or remove dark mode from localStorage
-        localStorage.removeItem("dark");
-      
-        if (document.body.classList.contains("dark")) {
-          localStorage.setItem("dark", 1);
-        }
-      });
-
+    
     //rtl & ltr
     const dirMode = document.querySelectorAll('[data-setting="dir-mode"][data-name="dir"]')
     Array.from(dirMode, (mode) => {
@@ -339,12 +317,12 @@ Index Of Script
     if(color !== 'null' && color !== undefined && color !== ''){
     const event = new CustomEvent("ColorChange", {detail :{detail1:color.trim(), detail2:colors.trim()}});
     document.dispatchEvent(event);
-    }
+}
     else{
     const event = new CustomEvent("ColorChange", {detail :{detail1:colorInfo.trim(), detail2:colors.trim()}});
     document.dispatchEvent(event);
-    }
-    const elements = document.querySelectorAll('[data-setting="color-mode1"][data-name="color"]')
+}
+const elements = document.querySelectorAll('[data-setting="color-mode1"][data-name="color"]')
     Array.from(elements, (mode) => {
         const colorclass = mode.getAttribute('data-value');
         if(colorclass === custombodyclass ){
@@ -355,7 +333,7 @@ Index Of Script
         }
     })
     }
-
+    
     const elements = document.querySelectorAll('[data-setting="color-mode1"][data-name="color"]')
     Array.from(elements, (mode) => {
     mode.addEventListener('click', (e) => {
@@ -381,4 +359,26 @@ Index Of Script
         customizerMode(custombodyclass,colors,color)     
     }
 
-})()
+});  
+
+// Load light or dark mode
+const body = document.querySelector("body"),
+  toggle = document.querySelector(".toggle");
+
+  let getMode = localStorage.getItem("mode");
+  if(getMode && getMode === "dark") {
+    body.classList.add("dark");
+    toggle.classList.add('active')
+  }
+
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
+
+    if(!body.classList.contains("dark")){
+        return localStorage.setItem("mode", "light"); 
+    }
+    localStorage.setItem("mode", "dark"); 
+
+  });
+
+toggle.addEventListener("click", () => toggle.classList.toggle('active'));

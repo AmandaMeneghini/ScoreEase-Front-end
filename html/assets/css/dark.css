@@ -153,6 +153,8 @@ hr {
 .dark .text-gray-dark {
   color: #343a40 !important;
 }
+
+
 .dark .iq-media-group .iq-icon-box-3 {
   background: #222738;
 }
@@ -160,6 +162,7 @@ hr {
   color: #8A92A6;
   background-color: #151824 !important;
 }
+
 .dark h1, .dark .h1, .dark h2, .dark .h2, .dark h3, .dark .h3, .dark h4, .dark .h4, .dark h5, .dark .h5, .dark h6, .dark .h6 {
   color: #8A92A6;
 }

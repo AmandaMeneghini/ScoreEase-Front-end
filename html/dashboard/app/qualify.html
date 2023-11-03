@@ -25,10 +25,15 @@
       
       <!-- Customizer Css -->
       <link rel="stylesheet" href="../../assets/css/customizer.min.css" />
+
+      <!-- toggle-css -->
+
+      <link rel="stylesheet" href="../../assets/css/toggle.css">
       
       <!-- RTL Css -->
       <link rel="stylesheet" href="../../assets/css/rtl.min.css"/>
       
+
       
   </head>
   <body class="  ">
@@ -81,7 +86,7 @@
                         </a>
                     </li> 
                         <li class="nav-item">
-                            <a class="nav-link"  href="../../dashboard/admin.html">
+                            <a class="nav-link"  href="../../dashboard/search.html">
                                 <i class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -101,7 +106,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="../../dashboard/special-pages/billing.html">
+                          <a class="nav-link" href="../../dashboard/special-pages/enrich.html">
                               <i class="icon">
                                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-arrow-down-fill" viewBox="0 0 16 16">
                                       <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM8 5a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5A.5.5 0 0 1 8 5z"/>
@@ -169,12 +174,12 @@
               <ul class="mb-2 navbar-nav ms-auto align-items-center navbar-list mb-lg-0">
                 <li class="nav-item dropdown">
                     <div class="mx-4 change-mode d-flex">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked="">
-                            <label class="form-check-label" for="flexSwitchCheckChecked">
-                                light or dark Mode
-                            </label>
-                        </div>
+                        <!-- START DARK MODE -->
+                        <div class="toggle d-flex">
+                          <svg class="moon-icon" width="15px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M9,2C7.95,2 6.95,2.16 6,2.46C10.06,3.73 13,7.5 13,12C13,16.5 10.06,20.27 6,21.54C6.95,21.84 7.95,22 9,22A10,10 0 0,0 19,12A10,10 0 0,0 9,2Z" /></svg>
+                          <svg class="sun-icon" width="15px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31L23.31,12L20,8.69Z" /></svg>
+                      </div>
+                       <!-- END DARK MODE -->
                     </div>
                 </li>
                 <li class="nav-item dropdown">

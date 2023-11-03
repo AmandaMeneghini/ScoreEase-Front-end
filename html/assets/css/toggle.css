@@ -1,0 +1,30 @@
+.toggle{
+    position: relative;
+    width: 2em;
+    height: 0.86em;
+    border-radius: 0.6em;
+    padding: 0.07em;
+    background-color: transparent;
+    box-shadow: 0 10px 20px -10px rgba(var(--shadow-dark-color), 38%);
+    cursor: pointer;
+    border: 0.01em solid #b3bff8;
+    transform: scale(1.5);
+}
+
+.toggle::before{
+    content: '';
+    position: absolute;
+    height: 0.7em;
+    width: 0.7em;
+    background-color: var(--bs-primary);
+    border-radius: 50%;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    transition: all .3s ease-in-out;
+}
+
+.toggle.active::before{
+    background-color: #5c6ca5;
+    left: calc(100% - 0.7em - 2px);
+}
