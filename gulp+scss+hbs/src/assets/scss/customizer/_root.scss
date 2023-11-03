@@ -1,6 +1,8 @@
 :root {
 
-    @mixin custom-color-variables($color-name: 'primary',$color-value: $primary) {
+
+
+    @mixin custom-color-variables($color-name: 'primary',$blue: $primary) {
         --#{$variable-prefix}heading-color: #{shade-color($color-value, 80%)};
         --#{$variable-prefix}#{$color-name}: #{$color-value};
         --#{$variable-prefix}#{$color-name}-shade-80: #{shade-color($color-value, 80%)};
