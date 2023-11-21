@@ -15641,6 +15641,7 @@ thead, tbody, tfoot, tr, td, th {
   margin-bottom: 0;
   z-index: 1;
 }
+
 .nav .sidebar-toggle {
   height: 26px;
   width: 26px;
@@ -15660,6 +15661,7 @@ thead, tbody, tfoot, tr, td, th {
           border-radius: 1rem;
   -webkit-box-shadow: 0 0.125rem 0.25rem rgba(58, 87, 232, 0.1);
           box-shadow: 0 0.125rem 0.25rem rgba(58, 87, 232, 0.1);
+          
 }
 .nav .navbar-toggler .navbar-toggler-icon {
   background-image: none;
@@ -15913,6 +15915,14 @@ thead, tbody, tfoot, tr, td, th {
 .sidebar.sidebar-mini + .main-content .iq-navbar.navs-sticky.menu-sticky {
   width: -webkit-calc(100% - 4.8rem);
   width: calc(100% - 4.8rem);
+}
+
+.overlay-logo-sidebar { 
+
+  max-width: 160px;
+  opacity: 0.1;
+  margin: 10px -20px 0px 0px;
+
 }
 
 @media (max-width: 991.98px) {
